@@ -1,8 +1,13 @@
-package Pojobend;
+package annotationbasedconfiguration;
+import Pojobend.Account;
+import Pojobend.AccountRepository;
+import org.springframework.stereotype.Repository;
+
 import java.util.HashMap;
 import java.util.Map;
-public class AccountRepositoryImpl implements  AccountRepository{
-    private Map<Long,Account> accountMap = new HashMap<>();
+@Repository
+public class AccountRepository2Impl implements AccountRepository {
+    private Map<Long, Account> accountMap = new HashMap<>();
     {
         Account account1 = new Account();
         account1.setId(1l);

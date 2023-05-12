@@ -1,10 +1,14 @@
-package Pojobend;
+package dependencyinjection;
 
-public class AccountServiceImpl implements  AccountService{
+import Pojobend.Account;
+import Pojobend.AccountRepository;
+import Pojobend.AccountService;
 
-    private  AccountRepository accountRepository;
+public class AccountServiceContructorImpl implements AccountService {
 
-    public void setAccountRepository(AccountRepository accountRepository) {
+    private AccountRepository accountRepository;
+
+    public AccountServiceContructorImpl (AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }
 

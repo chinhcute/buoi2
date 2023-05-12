@@ -1,14 +1,13 @@
-package xmlBasedConfigution;
+package dependencyinjection;
 
 import Pojobend.AccountService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
-
-public class Main {
+public class MainSet {
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext ("xmlbasedconfiguration/beans.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext ("set/beans.xml");
         AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
         System.out.println("Before money transfer");
         System.out.println("Account 1 balance: " + accountService.getAccount(1).getBalance());

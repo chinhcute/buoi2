@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--     bean definitions here-->
+<!--    <bean id="account1" class="Pojobend.Account">-->
+<!--        <property name="id" value="0"/>-->
+<!--        <property name="ownerName" value="Phu Binh"/>-->
+<!--        <property name="balance" value="99999.9999"/>-->
+<!--    </bean>-->
+<!--    <bean id="account2" class="Pojobend.Account">-->
+<!--        <property name="id" value="1"/>-->
+<!--        <property name="ownerName" value="Aric"/>-->
+<!--        <property name="balance" value="100.000"/>-->
+<!--    </bean>-->
+    <bean id="accountRepository" class="Pojobend.AccountRepositoryImpl"/>
+    <bean id = "accountService" class="Pojobend.AccountServiceImpl">
+        <property name="accountRepository" ref="accountRepository"/>
+    </bean>
+</beans>

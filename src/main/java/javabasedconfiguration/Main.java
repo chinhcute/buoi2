@@ -1,13 +1,14 @@
-package annotationbasedconfiguration;
+package javabasedconfiguration;
 
 import Pojobend.AccountService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext ("annotationbasedconfiguration/beans.xml");
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfiguration.class);
         AccountService accountService = applicationContext.getBean("accountService", AccountService.class);
         System.out.println("Before money transfer");
         System.out.println("Account 1 balance: " + accountService.getAccount(1).getBalance());

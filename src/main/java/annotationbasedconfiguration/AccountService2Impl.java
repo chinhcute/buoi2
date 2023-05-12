@@ -1,9 +1,16 @@
-package Pojobend;
+package annotationbasedconfiguration;
 
-public class AccountServiceImpl implements  AccountService{
+import Pojobend.Account;
+import Pojobend.AccountRepository;
+import Pojobend.AccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-    private  AccountRepository accountRepository;
+@Service("accountService")
+public class AccountService2Impl implements AccountService {
 
+    private AccountRepository accountRepository;
+    @Autowired
     public void setAccountRepository(AccountRepository accountRepository) {
         this.accountRepository = accountRepository;
     }

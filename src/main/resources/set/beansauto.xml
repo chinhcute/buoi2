@@ -5,7 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- bean definitions here -->
-   <context:annotation-config/>
-    <context:component-scan base-package="annotationbasedconfiguration" />
+    <bean id="accountRepository" class="Pojobend.AccountRepositoryImpl">
+    </bean>
+    <bean id = "accountService" class = "dependencyinjection.AccountServiceSetterImpl" autowire="byName">
+    </bean>
 
 </beans>
